@@ -27,7 +27,7 @@ function Message() {
     <StyledMessage>
       <MessageUser>
         <MessageAvatar />
-        <MessageUsername>MesageUsername</MessageUsername>
+        <MessageUsername>MessageUsername</MessageUsername>
       </MessageUser>
       <MessageText>MessageText</MessageText>
     </StyledMessage>
