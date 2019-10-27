@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledMessageAvatar = styled.img`
+const StyledTweetAvatar = styled.img`
   overflow: hidden
   margin-right: 20px;
   width: 50px;
@@ -14,8 +14,8 @@ const StyledMessageAvatar = styled.img`
   }
 `;
 
-function MessageAvatar() {
-  return <StyledMessageAvatar src="https://via.placeholder.com/150" />;
+function TweetAvatar({ image }) {
+  return <StyledTweetAvatar src={image} />;
 }
 
-export default MessageAvatar;
+export default TweetAvatar;

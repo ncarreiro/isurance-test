@@ -16,7 +16,7 @@ function Header() {
   return (
     <StyledHeader>
       <Container>
-        <Input />
+        <Input placeholder="Type a #hash, @user, or any text and wait a second to search" />
       </Container>
     </StyledHeader>
   );

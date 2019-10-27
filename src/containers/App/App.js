@@ -1,7 +1,7 @@
 import React from "react";
 
 import Header from "containers/header/Header";
-import Messages from "containers/messages/Messages";
+import Tweets from "containers/tweets/Tweets";
 import MainContainer from "components/MainContainer";
 
 class App extends React.Component {
@@ -9,7 +9,7 @@ class App extends React.Component {
     return (
       <MainContainer>
         <Header />
-        <Messages />
+        <Tweets />
       </MainContainer>
     );
   }

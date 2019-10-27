@@ -1,12 +1,8 @@
 import { combineReducers } from "redux";
 import { REQUEST_TWEETS, RECEIVE_TWEETS } from "../actions";
+import mockedTweets from "./mockedTweets";
 
-function tweets(
-  state = {
-    tweets: []
-  },
-  action
-) {
+function tweets(state = mockedTweets, action) {
   switch (action.type) {
     case REQUEST_TWEETS:
       return Object.assign({}, state, {
