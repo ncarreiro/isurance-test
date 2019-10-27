@@ -8,7 +8,11 @@ import Tweet from "components/Tweet";
 const TweetsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 100px);
+  min-height: calc(100vh - 100px);
+`;
+
+const NoTweets = styled.h1`
+  text-align: center;
 `;
 
 class Tweets extends React.Component {
@@ -17,9 +21,11 @@ class Tweets extends React.Component {
 
     return (
       <TweetsContainer>
-        {tweets.length > 0
-          ? tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
-          : "No tweets :("}
+        {tweets.length > 0 ? (
+          tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
+        ) : (
+          <NoTweets>No tweets, sorry :(</NoTweets>
+        )}
       </TweetsContainer>
     );
   }
