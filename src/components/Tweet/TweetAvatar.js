@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledTweetAvatar = styled.img`
+const TweetAvatarContainer = styled.img`
   overflow: hidden
   margin-right: 20px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #333;
+  border: 3px solid #fff;
 
   img {
     display: block;
@@ -15,7 +15,7 @@ const StyledTweetAvatar = styled.img`
 `;
 
 function TweetAvatar({ image }) {
-  return <StyledTweetAvatar src={image} />;
+  return <TweetAvatarContainer src={image} />;
 }
 
 export default TweetAvatar;
