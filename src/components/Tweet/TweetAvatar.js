@@ -7,7 +7,7 @@ const TweetAvatarContainer = styled.img`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  border: 3px solid rgb(37, 51, 65);
 
   img {
     display: block;
