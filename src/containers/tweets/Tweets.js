@@ -15,25 +15,23 @@ const NoTweets = styled.h1`
   text-align: center;
 `;
 
-class Tweets extends React.Component {
-  render() {
-    const { tweets } = this.props;
+function Tweets(props) {
+  const { tweets } = props;
 
-    return (
-      <TweetsContainer>
-        {tweets.length > 0 ? (
-          tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
-        ) : (
-          <NoTweets>No tweets, sorry :(</NoTweets>
-        )}
-      </TweetsContainer>
-    );
-  }
+  return (
+    <TweetsContainer>
+      {tweets.length > 0 ? (
+        tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
+      ) : (
+        <NoTweets>No tweets, sorry :(</NoTweets>
+      )}
+    </TweetsContainer>
+  );
 }
 
 const mapStateToProps = state => {
   return {
-    tweets: state.tweets
+    tweets: state.tweets.messages
   };
 };
 

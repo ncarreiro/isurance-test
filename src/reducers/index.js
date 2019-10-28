@@ -1,17 +1,23 @@
 import { combineReducers } from "redux";
 import { REQUEST_TWEETS, RECEIVE_TWEETS } from "../actions";
-import mockedTweets from "./mockedTweets";
 
-function tweets(state = mockedTweets, action) {
+function tweets(
+  state = {
+    isFetching: true,
+    messages: []
+  },
+  action
+) {
   switch (action.type) {
     case REQUEST_TWEETS:
       return Object.assign({}, state, {
-        isFetching: true
+        isFetching: true,
+        messages: []
       });
     case RECEIVE_TWEETS:
       return Object.assign({}, state, {
         isFetching: false,
-        tweets: action.tweets,
+        messages: action.messages,
         lastUpdated: action.receivedAt
       });
     default:
