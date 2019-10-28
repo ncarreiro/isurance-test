@@ -14,7 +14,9 @@
     "redux-thunk": "^2.3.0",
     "styled-components": "^4.4.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@testing-library/react": "^9.3.0"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

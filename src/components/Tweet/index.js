@@ -14,11 +14,15 @@ const TweetContainer = styled.div`
 `;
 
 function Tweet({ tweet }) {
-  return (
-    <TweetContainer>
+  return tweet ? (
+    <TweetContainer data-testid="tweet-container">
       <TweetUser user={tweet.user} />
-      <TweetText>{tweet.text}</TweetText>
+      <TweetText data-testid="tweet-text">{tweet.text}</TweetText>
     </TweetContainer>
+  ) : (
+    <div data-testid="tweet-container-error">
+      Error: Tweet prop not available.
+    </div>
   );
 }
 

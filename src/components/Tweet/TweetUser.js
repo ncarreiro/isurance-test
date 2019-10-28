@@ -16,10 +16,18 @@ const TweetUsername = styled.a`
 
 function TweetUser({ user }) {
   return (
-    <TweetUserContainer>
-      <TweetAvatar image={user.profile_image_url_https} />
-      <TweetUsername href={user.url} target="_blank">
-        {user.name} (@{user.screen_name})
+    <TweetUserContainer data-testid="tweet-user-container">
+      <TweetAvatar
+        data-testid="tweet-user-avatar"
+        image={user.profile_image_url_https}
+      />
+      <TweetUsername
+        data-testid="tweet-user-name"
+        href={user.url}
+        target="_blank"
+      >
+        <span data-testid="tweet-user-name-text">{user.name}</span> (
+        <span data-testid="tweet-user-screen-name">@{user.screen_name}</span>)
       </TweetUsername>
     </TweetUserContainer>
   );
