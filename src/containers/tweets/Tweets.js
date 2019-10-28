@@ -9,10 +9,6 @@ const TweetsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 100px);
-
-  &[disabled] {
-    opacity: 0.5;
-  }
 `;
 
 const LoadingTweets = styled.h1`
@@ -30,7 +26,7 @@ function Tweets(props) {
 
   return isFetching ? (
     <TweetsContainer>
-      <LoadingTweets>Loading new Tweets...</LoadingTweets>
+      <LoadingTweets>Searching new Tweets...</LoadingTweets>
     </TweetsContainer>
   ) : (
     <TweetsContainer>
