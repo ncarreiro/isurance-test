@@ -3,7 +3,7 @@ import { REQUEST_TWEETS, RECEIVE_TWEETS } from "../actions";
 
 function tweets(
   state = {
-    isFetching: true,
+    isFetching: false,
     messages: []
   },
   action
@@ -12,11 +12,13 @@ function tweets(
     case REQUEST_TWEETS:
       return Object.assign({}, state, {
         isFetching: true,
+        query: action.query,
         messages: []
       });
     case RECEIVE_TWEETS:
       return Object.assign({}, state, {
         isFetching: false,
+        query: action.query,
         messages: action.messages,
         lastUpdated: action.receivedAt
       });

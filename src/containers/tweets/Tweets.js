@@ -9,6 +9,14 @@ const TweetsContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 100px);
+
+  &[disabled] {
+    opacity: 0.5;
+  }
+`;
+
+const LoadingTweets = styled.h1`
+  text-align: center;
 `;
 
 const NoTweets = styled.h1`
@@ -16,12 +24,19 @@ const NoTweets = styled.h1`
 `;
 
 function Tweets(props) {
-  const { tweets } = props;
+  const {
+    tweets: { isFetching, query, messages }
+  } = props;
 
-  return (
+  return isFetching ? (
     <TweetsContainer>
-      {tweets.length > 0 ? (
-        tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
+      <LoadingTweets>Loading new Tweets...</LoadingTweets>
+    </TweetsContainer>
+  ) : (
+    <TweetsContainer>
+      {query && <h2>Search results for: {query}</h2>}
+      {messages.length > 0 ? (
+        messages.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
       ) : (
         <NoTweets>No tweets, sorry :(</NoTweets>
       )}
@@ -31,7 +46,7 @@ function Tweets(props) {
 
 const mapStateToProps = state => {
   return {
-    tweets: state.tweets.messages
+    tweets: state.tweets
   };
 };
 

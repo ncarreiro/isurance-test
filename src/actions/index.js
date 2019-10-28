@@ -22,12 +22,18 @@ function receiveTweets(query, response) {
 
 export function fetchTweets(query) {
   return dispatch => {
-    dispatch(requestTweets(query));
-    dispatch(receiveTweets(query, mockedTweets));
+    // Transforming query to lower case + removing special characters (that are not @ nor #)
+    const cleanQuery = query.toLowerCase().replace(/[^\w\s@#]/gi, "");
 
-    // Axios Request with the Twitter API
+    // Dispatch of the Request Action (start)
+    dispatch(requestTweets(cleanQuery));
+
+    // Dispatch of the Receive Action (response)
+    dispatch(receiveTweets(cleanQuery, mockedTweets));
+
+    // Axios Request with the Twitter API (needs an OAuth Token from a Twitter Developer App to finish this)
     // return axios
-    //   .get(`https://api.twitter.com/1.1/search/tweets.json?q=${query}`)
+    //   .get(`https://api.twitter.com/1.1/search/tweets.json?q=${cleanQuery}`)
     //   .then(response => response.json())
     //   .then(json => dispatch(receiveTweets(query, json)));
   };
