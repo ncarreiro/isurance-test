@@ -2,6 +2,8 @@
 
 ## Page preview ##
 
+[Demo](https://ncarreiro.github.io/isurance-test)
+
 ## Run project ##
 
 1.	``yarn install`` or ``npm install``
