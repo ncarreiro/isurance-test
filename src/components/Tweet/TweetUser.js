@@ -12,6 +12,10 @@ const TweetUsername = styled.a`
   text-decoration: none;
   font-size: 1.5em;
   color: #00a1ef;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
 `;
 
 function TweetUser({ user }) {

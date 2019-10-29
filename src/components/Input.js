@@ -9,6 +9,12 @@ const Input = styled.input`
   border-radius: 5px;
   background-color: rgb(37, 51, 65);
   color: #fff;
+
+  @media (max-width: 768px) {
+    padding: 0 10px;
+    height: 50px;
+    font-size: 1em;
+  }
 `;
 
 export default Input;

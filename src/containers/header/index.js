@@ -12,6 +12,10 @@ const HeaderContainer = styled.div`
   justify-content: center;
   height: 150px;
   color: white;
+
+  @media (max-width: 768px) {
+    height: 80px;
+  }
 `;
 
 function Header(props) {
@@ -50,7 +54,7 @@ function Header(props) {
         <Input
           data-testid="header-search-input"
           onChange={handleOnChange}
-          placeholder="Type a #hash, @user, or any text and wait a second to search"
+          placeholder="Type a #hash, @user, or any text to start searching"
         />
       </Container>
     </HeaderContainer>

@@ -4,8 +4,18 @@ import styled from "styled-components";
 
 import Tweet from "components/Tweet";
 
+const SearchQuery = styled.h2`
+  @media (max-width: 768px) {
+    font-size: 1em;
+  }
+`;
+
 const NoTweets = styled.h1`
   text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
 `;
 
 function TweetsMessages(props) {
@@ -13,7 +23,7 @@ function TweetsMessages(props) {
 
   return (
     <div>
-      {query && <h2>Search results for: {query}</h2>}
+      {query && <SearchQuery>Search results for: {query}</SearchQuery>}
 
       {tweets.length > 0 ? (
         tweets.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)

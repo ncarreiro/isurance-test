@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const TweetAvatarContainer = styled.img`
+  flex-shrink: 0;
   overflow: hidden
   margin-right: 20px;
   width: 50px;
@@ -11,6 +12,10 @@ const TweetAvatarContainer = styled.img`
 
   img {
     display: block;
+  }
+
+  @media (max-width: 768px) {
+    margin-right: 10px;
   }
 `;
 

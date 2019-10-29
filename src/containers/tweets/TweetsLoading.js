@@ -3,6 +3,9 @@ import styled from "styled-components";
 
 const TweetsLoadingContainer = styled.h1`
   text-align: center;
+  @media (max-width: 768px) {
+    font-size: 1.2em;
+  }
 `;
 
 function TweetsLoading() {
