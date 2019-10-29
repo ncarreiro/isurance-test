@@ -1,14 +1,18 @@
 import { combineReducers } from "redux";
-import { REQUEST_TWEETS, RECEIVE_TWEETS } from "../actions";
+import { REQUEST_TWEETS, RECEIVE_TWEETS, CLEAR_TWEETS } from "../actions";
 
-function tweets(
-  state = {
-    isFetching: false,
-    messages: []
-  },
-  action
-) {
+export const initialState = {
+  isFetching: false,
+  messages: [],
+  query: ""
+};
+
+function tweets(state = initialState, action) {
   switch (action.type) {
+    case CLEAR_TWEETS:
+      return Object.assign({}, state, {
+        query: ""
+      });
     case REQUEST_TWEETS:
       return Object.assign({}, state, {
         isFetching: true,
@@ -20,7 +24,7 @@ function tweets(
         isFetching: false,
         query: action.query,
         messages: action.messages,
-        lastUpdated: action.receivedAt
+        receivedAt: Date.now()
       });
     default:
       return state;

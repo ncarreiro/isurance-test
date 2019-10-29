@@ -4,10 +4,14 @@ import { render } from "@testing-library/react";
 import App from "../App";
 
 import { Provider } from "react-redux";
-import configureStore from "store";
-const store = configureStore();
+import configureStore from "redux-mock-store";
+const mockStore = configureStore();
 
 describe("App", () => {
+  let store;
+  const initialState = { tweets: { messages: [] } };
+  store = mockStore(initialState);
+
   const { getByTestId } = render(
     <Provider store={store}>
       <App />

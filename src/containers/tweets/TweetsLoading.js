@@ -7,7 +7,7 @@ const TweetsLoadingContainer = styled.h1`
 
 function TweetsLoading() {
   return (
-    <TweetsLoadingContainer data-testid="loading-tweets-container">
+    <TweetsLoadingContainer data-testid="tweets-loading-container">
       Loading new Tweets...
     </TweetsLoadingContainer>
   );

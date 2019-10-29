@@ -1,18 +1,24 @@
 // import axios from "axios";
 import mockedTweets from "mocks/mockedTweets";
 
-export const CLEAR_TWEETS_QUERY = "CLEAR_TWEETS_QUERY";
+export const CLEAR_TWEETS = "CLEAR_TWEETS";
 export const REQUEST_TWEETS = "REQUEST_TWEETS";
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 
-function requestTweetsByQuery(query) {
+export function clearTweets() {
+  return {
+    type: CLEAR_TWEETS
+  };
+}
+
+export function requestTweetsByQuery(query) {
   return {
     type: REQUEST_TWEETS,
     query
   };
 }
 
-function receiveTweetsByQuery(query, response) {
+export function receiveTweetsByQuery(query, response) {
   return {
     type: RECEIVE_TWEETS,
     query,
@@ -22,7 +28,7 @@ function receiveTweetsByQuery(query, response) {
 }
 
 export function clearTweetsQuery() {
-  return dispatch => dispatch(requestTweetsByQuery(""));
+  return dispatch => dispatch(clearTweets(""));
 }
 
 export function fetchTweetsByQuery(query) {
