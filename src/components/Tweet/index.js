@@ -20,9 +20,7 @@ function Tweet({ tweet }) {
       <TweetText data-testid="tweet-text">{tweet.text}</TweetText>
     </TweetContainer>
   ) : (
-    <div data-testid="tweet-container-error">
-      Error: Tweet prop not available.
-    </div>
+    <div data-testid="tweet-container-error">Error: Tweet prop missing.</div>
   );
 }
 

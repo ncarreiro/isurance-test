@@ -7,7 +7,7 @@ import MainContainer from "components/MainContainer";
 class App extends React.Component {
   render() {
     return (
-      <MainContainer>
+      <MainContainer data-testid="main-container">
         <Header />
         <Tweets />
       </MainContainer>

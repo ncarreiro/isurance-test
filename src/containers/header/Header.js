@@ -41,7 +41,7 @@ function Header(props) {
   }
 
   return (
-    <HeaderContainer>
+    <HeaderContainer data-testid="header">
       <Container>
         <Input
           onChange={fetchTweetsByQuery}

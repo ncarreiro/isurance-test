@@ -25,11 +25,11 @@ function Tweets(props) {
   } = props;
 
   return isFetching ? (
-    <TweetsContainer>
+    <TweetsContainer data-testid="tweets">
       <LoadingTweets>Searching new Tweets...</LoadingTweets>
     </TweetsContainer>
   ) : (
-    <TweetsContainer>
+    <TweetsContainer data-testid="tweets">
       {query && <h2>Search results for: {query}</h2>}
       {messages.length > 0 ? (
         messages.map(tweet => <Tweet key={tweet.id} tweet={tweet} />)
