@@ -1,4 +1,17 @@
-# I-surance Frontend test #
+# I-surance Frontend test by Nahuel Carreiro #
+
+## Page preview ##
+
+## Run project ##
+
+1.	``yarn install`` or ``npm install``
+2.	``yarn start`` or ``npm start``
+
+## Run tests ##
+
+``yarn test`` or ``npm test``
+
+## Test information ##
 
 Welcome to i-surance Frontend Developer Test!
 
