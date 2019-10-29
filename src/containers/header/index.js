@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { fetchTweets } from "../../actions";
+import { clearTweetsQuery, fetchTweetsByQuery } from "actions";
 import styled from "styled-components";
 
 import Container from "components/Container";
@@ -17,7 +17,7 @@ const HeaderContainer = styled.div`
 function Header(props) {
   let searchTimeout;
 
-  function fetchTweetsByQuery(event) {
+  function handleOnChange(event) {
     // Clears previous timeout
     clearTimeout(searchTimeout);
 
@@ -31,20 +31,22 @@ function Header(props) {
       case "#":
         break;
       default:
+        // Shows the user that the Search Action begins
+        props.dispatch(clearTweetsQuery());
         // Input timeout of 2 seconds before the Redux Action is dispatched
         searchTimeout = setTimeout(
-          () => props.dispatch(fetchTweets(query)),
-          2000
+          () => props.dispatch(fetchTweetsByQuery(query)),
+          1000
         );
         break;
     }
   }
 
   return (
-    <HeaderContainer data-testid="header">
+    <HeaderContainer data-testid="header-container">
       <Container>
         <Input
-          onChange={fetchTweetsByQuery}
+          onChange={handleOnChange}
           placeholder="Type a #hash, @user, or any text and wait a second to search"
         />
       </Container>

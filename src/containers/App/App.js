@@ -1,7 +1,7 @@
 import React from "react";
 
-import Header from "containers/header/Header";
-import Tweets from "containers/tweets/Tweets";
+import Header from "containers/header";
+import Tweets from "containers/tweets";
 import MainContainer from "components/MainContainer";
 
 class App extends React.Component {

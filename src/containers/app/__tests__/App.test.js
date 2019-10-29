@@ -1,12 +1,10 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { render } from "@testing-library/react";
-
-import { Provider } from "react-redux";
-import configureStore from "store";
 
 import App from "../App";
 
+import { Provider } from "react-redux";
+import configureStore from "store";
 const store = configureStore();
 
 describe("App", () => {
@@ -17,8 +15,8 @@ describe("App", () => {
   );
 
   const container = getByTestId("main-container");
-  const header = getByTestId("header");
-  const tweets = getByTestId("tweets");
+  const header = getByTestId("header-container");
+  const tweets = getByTestId("tweets-container");
 
   it("renders the Main Container", () => {
     expect(container).toBeDefined();

@@ -1,17 +1,18 @@
 // import axios from "axios";
-import mockedTweets from "./mockedTweets";
+import mockedTweets from "mocks/mockedTweets";
 
+export const CLEAR_TWEETS_QUERY = "CLEAR_TWEETS_QUERY";
 export const REQUEST_TWEETS = "REQUEST_TWEETS";
 export const RECEIVE_TWEETS = "RECEIVE_TWEETS";
 
-function requestTweets(query) {
+function requestTweetsByQuery(query) {
   return {
     type: REQUEST_TWEETS,
     query
   };
 }
 
-function receiveTweets(query, response) {
+function receiveTweetsByQuery(query, response) {
   return {
     type: RECEIVE_TWEETS,
     query,
@@ -20,16 +21,20 @@ function receiveTweets(query, response) {
   };
 }
 
-export function fetchTweets(query) {
+export function clearTweetsQuery() {
+  return dispatch => dispatch(requestTweetsByQuery(""));
+}
+
+export function fetchTweetsByQuery(query) {
   return dispatch => {
     // Transforming query to lower case + removing special characters (that are not @ nor #)
     const cleanQuery = query.toLowerCase().replace(/[^\w\s@#]/gi, "");
 
     // Dispatch of the Request Action (start)
-    dispatch(requestTweets(cleanQuery));
+    dispatch(requestTweetsByQuery(cleanQuery));
 
     // Dispatch of the Receive Action (response)
-    dispatch(receiveTweets(cleanQuery, mockedTweets));
+    dispatch(receiveTweetsByQuery(cleanQuery, mockedTweets));
 
     // Axios Request with the Twitter API (needs an OAuth Token from a Twitter Developer App to finish this)
     // return axios

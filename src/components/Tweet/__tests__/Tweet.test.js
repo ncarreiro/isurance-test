@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 
 import Tweet from "../";
-import mockedTweet from "./mockedTweet";
+import mockedTweet from "mocks/mockedTweet";
 
 describe("when no data is passed as the tweet prop", () => {
   const { getByTestId, getByText } = render(<Tweet />);
