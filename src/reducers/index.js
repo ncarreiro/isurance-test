@@ -11,6 +11,7 @@ function tweets(state = initialState, action) {
   switch (action.type) {
     case CLEAR_TWEETS:
       return Object.assign({}, state, {
+        isFetching: true,
         query: ""
       });
     case REQUEST_TWEETS:

@@ -14,12 +14,13 @@ describe("tweets reducers", () => {
 
   it("should handle CLEAR_TWEETS", () => {
     const startAction = {
-      type: CLEAR_TWEETS
+      type: CLEAR_TWEETS,
+      isFetching: true
     };
 
     expect(reducers({}, startAction)).toEqual({
       tweets: {
-        isFetching: false,
+        isFetching: true,
         messages: [],
         query: ""
       }
